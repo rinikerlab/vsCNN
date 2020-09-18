@@ -61,7 +61,7 @@ class CMakeBuild(build_ext):
 
 setup(
     name='pycomdensity',
-    version='0.1.0',
+    version='0.1.1',
     author='Gregor Weiss',
     author_email='gregor.weiss@phys.chem.ethz.ch',
     description='This package contains density based clustering routes of the common nearest neighbor type.',
