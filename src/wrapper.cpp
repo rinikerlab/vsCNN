@@ -70,7 +70,7 @@ namespace Clustering {
                 // Obtain neighbor lists
                 Neighbors neighbor_lists;
                 Neighbors second_neighbor_lists;
-                nns::neighbors(neighbor_lists, data, cut, sim);
+                nns::neighbors(neighbor_lists, data, cut, 0);
 
                 // Obtain clusters
                 Core::simptr similarity;
@@ -141,8 +141,9 @@ namespace Clustering {
                 // Obtain neighbor lists
                 Neighbors neighbor_lists;
                 Neighbors second_neighbor_lists;
-                nns::neighbors(neighbor_lists, tICs, clstep.cut, clstep.sim);
+                nns::neighbors(neighbor_lists, tICs, clstep.cut, 0);
                 if (neighbor_lists.size() < 2) continue;
+
                 // Obtain clusters
                 Core::simptr similarity;
                 similarity = args.flag<bool>("-CNN") ? CommonNearestNeighbor::similarity : CommonDensity::similarity;

@@ -32,6 +32,9 @@ add_executable(comdensity src/main.cpp
         src/tools/utility.h src/tools/utility.cpp
         )
 
+### TESTS ###
+add_subdirectory(tests)
+
 ### PYTHON LIBRARY ###
 
 project(pycomdensity)

@@ -31,19 +31,6 @@ SOFTWARE
 
 namespace Geometry {
 
-    double volume(const double cut,
-                  const unsigned int n) {
-
-        double nf(static_cast<double>(n));
-        double rn(std::pow(cut, n));
-        double nhalf(0.5f * nf);
-        double nhalfplusone(nhalf + 1.0f);
-        double scale(std::pow(boost::math::constants::pi<double>(), nhalf));
-        scale /= boost::math::tgamma<double>(nhalfplusone);
-
-        return scale * rn;
-    }
-
     double regularized_intersection_volume(const double dist,
                                            const double cut,
                                            const unsigned int n) {
@@ -55,12 +42,6 @@ namespace Geometry {
         double incomplete_beta(boost::math::ibeta<double, double, double>(nhalfplusonehalf, 0.5, sin2phi));
 
         return incomplete_beta;
-    }
-
-    double intersection_volume(const double dist,
-                               const double cut,
-                               const unsigned int n) {
-        return volume(cut, n) * regularized_intersection_volume(dist, cut, n);
     }
 
 }

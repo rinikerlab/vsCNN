@@ -36,6 +36,8 @@ namespace Clustering {
 
     namespace CommonDensity {
 
+        float calc_distance(const vector<float> &vec1, const vector<float> &vec2);
+
         ////////////// CORE UTILITY ///////////////
         bool similarity(vector<vector<float> > &data,
                         const Neighbors &neighbors_ij,

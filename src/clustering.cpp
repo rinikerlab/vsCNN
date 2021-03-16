@@ -46,7 +46,7 @@ namespace Clustering {
         // Obtain neighbor lists
         Neighbors neighbor_lists;
         Neighbors second_neighbor_lists;
-        nns::neighbors(neighbor_lists, data, cut, sim);
+        nns::neighbors(neighbor_lists, data, cut, 0);
 
         // Obtain clusters
         return Clustering::Core::algorithm(similarity,
@@ -94,7 +94,7 @@ namespace Clustering {
                                                 clusters[cluster_idx],
                                                 data,
                                                 step.cut,
-                                                step.sim);
+                                                0);
                     nghbrlst_szs[cluster_idx] = neighbors_ij.size();
 
                     vector<vector<unsigned int> > new_clusters;
@@ -165,7 +165,6 @@ namespace Clustering {
 //#ifdef ENABLE_DEBUG_MACRO
         std::cout << "Total # frames " << total_frames << std::endl;
 //#endif
-
         return leaves;
     }
 

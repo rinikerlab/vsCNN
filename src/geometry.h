@@ -30,16 +30,9 @@ SOFTWARE
 
 namespace Geometry {
 
-    double volume(const double cut,
-                  const unsigned int n);
-
     double regularized_intersection_volume(const double distance,
                                            const double cut,
                                            const unsigned int n);
-
-    double intersection_volume(const double distance,
-                               const double cut,
-                               const unsigned int n);
 
 }
 
